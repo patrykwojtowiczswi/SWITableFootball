@@ -2,11 +2,17 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 
 import { AppComponent } from './app.component'
+import { TeamService } from './team/team.service'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
+  imports:
+    [
+      BrowserModule,
+      HttpClientModule
+    ],
+  providers: [TeamService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
