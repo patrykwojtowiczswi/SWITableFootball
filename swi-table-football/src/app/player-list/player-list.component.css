@@ -1,0 +1,9 @@
+::ng-deep table.mat-table {
+    border-spacing: 0;
+    width: 100%;
+}
+
+::ng-deep .mat-raised-button {
+    margin-bottom : 10px;
+    width: 100%;
+}
