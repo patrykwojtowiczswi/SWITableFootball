@@ -1,0 +1,8 @@
+.listHeader {
+  background-color:#000080;
+  color:white;
+}
+
+::ng-deep .mat-card {
+    padding: 0
+}

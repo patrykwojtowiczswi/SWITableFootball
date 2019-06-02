@@ -17,7 +17,7 @@ export class PlayerAddDialog {
 
   constructor(
     public dialogRef: MatDialogRef<PlayerAddDialog>,
-    private playerService: PlayerService, ) { }
+    private playerService: PlayerService) { }
 
   onAdd(): void {
     this.playerService.add(this.player).subscribe(data => {

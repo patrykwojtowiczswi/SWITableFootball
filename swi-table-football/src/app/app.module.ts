@@ -14,13 +14,16 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material';
+import { MatInputModule, MatListModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { PlayerListComponent } from './player-list/player-list.component';
 import { PlayerAddDialog } from './player-list/player-add-dialog';
+import { TeamListComponent } from './team-list/team-list.component';
+import { TeamDetailsDialogComponent } from './team-list/team-details-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayerListComponent, PlayerAddDialog],
+  declarations: [AppComponent, PlayerListComponent, PlayerAddDialog, TeamListComponent, TeamDetailsDialogComponent],
   imports:
     [
       BrowserModule,
@@ -33,10 +36,12 @@ import { PlayerAddDialog } from './player-list/player-add-dialog';
       MatFormFieldModule,
       MatInputModule,
       BrowserAnimationsModule,
-      FormsModule
+      FormsModule,
+      MatDividerModule,
+      MatListModule
     ],
   providers: [TeamService],
   bootstrap: [AppComponent],
-  entryComponents: [PlayerListComponent, PlayerAddDialog],
+  entryComponents: [PlayerListComponent, PlayerAddDialog, TeamListComponent, TeamDetailsDialogComponent],
 })
 export class AppModule { }
