@@ -3,6 +3,7 @@ import { TeamService } from '../team/team.service';
 import { ITeam } from '../interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { TeamDetailsDialogComponent } from './team-details-dialog.component';
+import { TeamAddDialogComponent } from './team-add-dialog.component';
 
 @Component({
   selector: 'app-team-list',
@@ -27,14 +28,19 @@ export class TeamListComponent implements OnInit {
     const dialogRef = this.dialog.open(TeamDetailsDialogComponent, {
       width: '400px',
       data: row
-    });
-
-    // dialogRef.afterClosed().subscribe(result => {
-    //   this.playerService.getAll().subscribe(data => {
-    //     this.players = data
-    //     console.log(this.players)
-    //   })
-    // });
+    })
   }
 
+  addTeam(): void {
+    const dialogRef = this.dialog.open(TeamAddDialogComponent, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.teamService.getAll().subscribe(data => {
+        this.teams = data
+        console.log(this.teams)
+      })
+    });
+  }
 }

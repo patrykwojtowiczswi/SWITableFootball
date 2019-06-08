@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component'
 import { TeamService } from './team/team.service'
@@ -14,16 +14,24 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatListModule } from '@angular/material';
+import { MatInputModule, MatListModule, MatSelectModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 
-import { PlayerListComponent } from './player-list/player-list.component';
-import { PlayerAddDialog } from './player-list/player-add-dialog';
-import { TeamListComponent } from './team-list/team-list.component';
-import { TeamDetailsDialogComponent } from './team-list/team-details-dialog.component';
+import { PlayerListComponent } from './player-component/player-list.component';
+import { PlayerAddDialog } from './player-component/player-add-dialog';
+import { TeamListComponent } from './team-component/team-list.component';
+import { TeamDetailsDialogComponent } from './team-component/team-details-dialog.component';
+import { TeamAddDialogComponent } from './team-component/team-add-dialog.component';
 
 @NgModule({
-  declarations: [AppComponent, PlayerListComponent, PlayerAddDialog, TeamListComponent, TeamDetailsDialogComponent],
+  declarations: [
+    AppComponent,
+    PlayerListComponent,
+    PlayerAddDialog,
+    TeamListComponent,
+    TeamDetailsDialogComponent,
+    TeamAddDialogComponent
+  ],
   imports:
     [
       BrowserModule,
@@ -38,10 +46,18 @@ import { TeamDetailsDialogComponent } from './team-list/team-details-dialog.comp
       BrowserAnimationsModule,
       FormsModule,
       MatDividerModule,
-      MatListModule
+      MatListModule,
+      MatSelectModule,
+      ReactiveFormsModule
     ],
   providers: [TeamService],
   bootstrap: [AppComponent],
-  entryComponents: [PlayerListComponent, PlayerAddDialog, TeamListComponent, TeamDetailsDialogComponent],
+  entryComponents: [
+    PlayerListComponent,
+    PlayerAddDialog,
+    TeamListComponent,
+    TeamDetailsDialogComponent,
+    TeamAddDialogComponent
+  ],
 })
 export class AppModule { }

@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Add Team</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="team.name" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Player One</mat-label>
+    <mat-select [(ngModel)]="team.playerOneId" [formControl]="playerControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let player of players" [value]="player.id">
+        {{player.name + ' ' + player.surname}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="playerControl.hasError('required')">Please choose an player</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Player Two</mat-label>
+    <mat-select [(ngModel)]="team.playerTwoId" [formControl]="playerControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let player of players" [value]="player.id">
+        {{player.name + ' ' + player.surname}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="playerControl.hasError('required')">Please choose an player</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onAdd()">ADD</button>
+</div>
