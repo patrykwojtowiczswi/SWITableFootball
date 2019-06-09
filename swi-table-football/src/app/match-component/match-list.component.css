@@ -1,0 +1,13 @@
+.mat-column-TeamOne {
+  width: 50%;
+  text-align: left;
+}
+.mat-column-TeamTwo {
+  width: 50%;
+  text-align:right;
+}
+
+.highlight-winner {
+  background-color: green;
+  color:white;
+}

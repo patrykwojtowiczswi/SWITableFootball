@@ -22,6 +22,7 @@ import { PlayerAddDialog } from './player-component/player-add-dialog';
 import { TeamListComponent } from './team-component/team-list.component';
 import { TeamDetailsDialogComponent } from './team-component/team-details-dialog.component';
 import { TeamAddDialogComponent } from './team-component/team-add-dialog.component';
+import { MatchListComponent } from './match-component/match-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TeamAddDialogComponent } from './team-component/team-add-dialog.compone
     PlayerAddDialog,
     TeamListComponent,
     TeamDetailsDialogComponent,
-    TeamAddDialogComponent
+    TeamAddDialogComponent,
+    MatchListComponent
   ],
   imports:
     [

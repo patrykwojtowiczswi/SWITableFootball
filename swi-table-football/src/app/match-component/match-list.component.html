@@ -1,0 +1,18 @@
+<mat-card>
+  <table mat-table [dataSource]="matches" class="mat-elevation-z8">
+    <ng-container matColumnDef="TeamOne">
+      <th mat-header-cell *matHeaderCellDef> Team 1 Name </th>
+      <td mat-cell [ngClass]="{'highlight-winner' : element.winner == 1}" *matCellDef="let element">
+        {{element.teamOne.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="TeamTwo">
+      <th mat-header-cell *matHeaderCellDef> Team 2 Name </th>
+      <td mat-cell [ngClass]="{'highlight-winner' : element.winner == 2}" *matCellDef="let element">
+        {{element.teamTwo.name}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
