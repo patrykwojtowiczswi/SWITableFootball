@@ -1,4 +1,5 @@
 <mat-card>
+  <button mat-raised-button (click)="addMatch()">Add</button>
   <table mat-table [dataSource]="matches" class="mat-elevation-z8">
     <ng-container matColumnDef="TeamOne">
       <th mat-header-cell *matHeaderCellDef> Team 1 Name </th>

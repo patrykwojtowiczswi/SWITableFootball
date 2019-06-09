@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatListModule, MatSelectModule } from '@angular/material';
+import { MatInputModule, MatListModule, MatSelectModule, MatRadioModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
 
 import { PlayerListComponent } from './player-component/player-list.component';
@@ -23,6 +23,7 @@ import { TeamListComponent } from './team-component/team-list.component';
 import { TeamDetailsDialogComponent } from './team-component/team-details-dialog.component';
 import { TeamAddDialogComponent } from './team-component/team-add-dialog.component';
 import { MatchListComponent } from './match-component/match-list.component';
+import { MatchAddDialogComponent } from './match-component/match-add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatchListComponent } from './match-component/match-list.component';
     TeamListComponent,
     TeamDetailsDialogComponent,
     TeamAddDialogComponent,
-    MatchListComponent
+    MatchListComponent,
+    MatchAddDialogComponent
   ],
   imports:
     [
@@ -50,7 +52,8 @@ import { MatchListComponent } from './match-component/match-list.component';
       MatDividerModule,
       MatListModule,
       MatSelectModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      MatRadioModule
     ],
   providers: [TeamService],
   bootstrap: [AppComponent],
@@ -59,7 +62,8 @@ import { MatchListComponent } from './match-component/match-list.component';
     PlayerAddDialog,
     TeamListComponent,
     TeamDetailsDialogComponent,
-    TeamAddDialogComponent
+    TeamAddDialogComponent,
+    MatchAddDialogComponent
   ],
 })
 export class AppModule { }
