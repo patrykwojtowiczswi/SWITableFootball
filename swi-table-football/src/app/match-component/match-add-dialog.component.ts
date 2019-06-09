@@ -13,11 +13,12 @@ import { TeamService } from '../team/team.service';
 })
 export class MatchAddDialogComponent implements OnInit {
 
-  matchControl = new FormControl('', [Validators.required])
+  teamOneControl = new FormControl('', [Validators.required])
+  teamTwoControl = new FormControl('', [Validators.required])
 
   match: IAddMatch = {
-    teamOneId: -1,
-    teamTwoId: -1,
+    teamOneId: null,
+    teamTwoId: null,
     winner: 1
   }
 

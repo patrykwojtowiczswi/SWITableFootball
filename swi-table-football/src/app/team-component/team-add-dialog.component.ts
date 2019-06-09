@@ -12,12 +12,14 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TeamAddDialogComponent implements OnInit {
 
-  playerControl = new FormControl('', [Validators.required]);
+  teamNameControl = new FormControl('', [Validators.required, Validators.minLength(3)])
+  playerOneControl = new FormControl('', [Validators.required]);
+  playerTwoControl = new FormControl('', [Validators.required]);
 
   team: IAddTeam = {
-    name: "",
-    playerOneId: 0,
-    playerTwoId: 0
+    name: null,
+    playerOneId: null,
+    playerTwoId: null
   }
 
   players: IPlayer[]

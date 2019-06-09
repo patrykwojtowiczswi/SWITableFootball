@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { IAddPlayer } from '../interfaces';
 import { PlayerService } from '../player/player.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'player-add-dialog',
@@ -9,6 +10,9 @@ import { PlayerService } from '../player/player.service';
   styleUrls: ['./player-add-dialog.css']
 })
 export class PlayerAddDialog {
+
+  playerNameControl = new FormControl('', [Validators.required, Validators.minLength(2)])
+  playerSurnameControl = new FormControl('', [Validators.required, Validators.minLength(2)])
 
   player: IAddPlayer = {
     name: "",

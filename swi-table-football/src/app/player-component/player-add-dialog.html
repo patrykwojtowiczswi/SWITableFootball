@@ -1,12 +1,17 @@
 <h1 mat-dialog-title>Add Player</h1>
 <div mat-dialog-content>
   <mat-form-field>
-    <input matInput [(ngModel)]="player.name" placeholder="Name">
+    <input matInput [(ngModel)]="player.name" placeholder="Name" [formControl]="playerNameControl">
+    <mat-error *ngIf="playerNameControl.hasError('required')">Player name required!</mat-error>
+    <mat-error *ngIf="playerNameControl.hasError('minlength')">Minimum length is 2 !</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="player.surname" placeholder="Surname">
+    <input matInput [(ngModel)]="player.surname" placeholder="Surname" [formControl]="playerSurnameControl">
+    <mat-error *ngIf="playerSurnameControl.hasError('required')">Player surname required!</mat-error>
+    <mat-error *ngIf="playerSurnameControl.hasError('minlength')">Minimum length is 2 !</mat-error>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onAdd()">ADD</button>
+  <button [disabled]='playerNameControl.invalid || playerSurnameControl.invalid' mat-button
+    (click)="onAdd()">ADD</button>
 </div>

@@ -2,23 +2,23 @@
 <div mat-dialog-content>
   <mat-form-field>
     <mat-label>Team One</mat-label>
-    <mat-select [(ngModel)]="match.teamOneId" [formControl]="matchControl" required>
+    <mat-select [(ngModel)]="match.teamOneId" [formControl]="teamOneControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let team of teams" [value]="team.id">
         {{team.name}}
       </mat-option>
     </mat-select>
-    <mat-error *ngIf="matchControl.hasError('required')">Please choose a team</mat-error>
+    <mat-error *ngIf="teamOneControl.hasError('required')">Please choose a team</mat-error>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Team Two</mat-label>
-    <mat-select [(ngModel)]="match.teamTwoId" [formControl]="matchControl" required>
+    <mat-select [(ngModel)]="match.teamTwoId" [formControl]="teamTwoControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let team of teams" [value]="team.id">
         {{team.name}}
       </mat-option>
     </mat-select>
-    <mat-error *ngIf="matchControl.hasError('required')">Please choose a team</mat-error>
+    <mat-error *ngIf="teamTwoControl.hasError('required')">Please choose a team</mat-error>
   </mat-form-field>
   <mat-radio-group class="winner-radio-group" [(ngModel)]="match.winner">
     <mat-radio-button class="winner-radio-button" *ngFor="let winner of pickWinner" [value]="winner">
@@ -27,5 +27,5 @@
   </mat-radio-group>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onAdd()">ADD</button>
+  <button [disabled]='teamOneControl.invalid || teamTwoControl.invalid' mat-button (click)="onAdd()">ADD</button>
 </div>
