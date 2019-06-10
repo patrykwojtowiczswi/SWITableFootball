@@ -5,24 +5,24 @@
   </mat-form-field>
   <mat-form-field>
     <mat-label>Player One</mat-label>
-    <mat-select [(ngModel)]="team.playerOneId" [formControl]="playerControl" required>
+    <mat-select [(ngModel)]="team.playerOneId" [formControl]="teamControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let player of players" [value]="player.id">
         {{player.name + ' ' + player.surname}}
       </mat-option>
     </mat-select>
-    <mat-error *ngIf="playerControl.hasError('required')">Please choose an player</mat-error>
+    <mat-error *ngIf="teamControl.hasError('required')">Please choose an player</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Player Two</mat-label>
-    <mat-select [(ngModel)]="team.playerTwoId" [formControl]="playerControl" required>
+    <mat-select [(ngModel)]="team.playerTwoId" [formControl]="teamControl" required>
       <mat-option>--</mat-option>
       <mat-option *ngFor="let player of players" [value]="player.id">
         {{player.name + ' ' + player.surname}}
       </mat-option>
     </mat-select>
-    <mat-error *ngIf="playerControl.hasError('required')">Please choose an player</mat-error>
+    <mat-error *ngIf="teamControl.hasError('required')">Please choose an player</mat-error>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

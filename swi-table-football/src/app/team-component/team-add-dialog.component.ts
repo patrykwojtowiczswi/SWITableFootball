@@ -12,7 +12,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class TeamAddDialogComponent implements OnInit {
 
-  playerControl = new FormControl('', [Validators.required]);
+  teamControl = new FormControl('', [Validators.required]);
 
   team: IAddTeam = {
     name: "",
