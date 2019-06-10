@@ -12,27 +12,8 @@ import { MatchService } from './match/match.service';
 export class AppComponent {
   title = 'swi-table-football'
 
-  teams: ITeam[]
-  matches: IMatch[]
-  players: IPlayer[]
-
-  constructor(
-    private teamService: TeamService,
-    private matchService: MatchService,
-    private playerService: PlayerService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.teamService.getAll().subscribe(data => {
-      this.teams = data
-      console.log(this.teams)
-    })
-    this.playerService.getAll().subscribe(data => {
-      this.players = data
-      console.log(this.players)
-    })
-    this.matchService.getAll().subscribe(data => {
-      this.matches = data
-      console.log(this.matches)
-    })
   }
 }
