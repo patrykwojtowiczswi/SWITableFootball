@@ -1,5 +1,5 @@
 # SWIFootballTable
 To run project :
 
-npm install
-ng serve
+1.npm install
+2.ng serve
